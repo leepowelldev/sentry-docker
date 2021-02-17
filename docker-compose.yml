@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  node:
+    container_name: sentry_docker_node
+    image: node:latest
+    working_dir: /home/node/app
+    restart: unless-stopped
+    volumes:
+      - ./:/home/node/app
+    command: 'npm start'
